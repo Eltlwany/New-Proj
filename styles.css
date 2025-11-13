@@ -1,0 +1,17 @@
+/* CSS الرئيسي */
+:root {
+    --font-family: 'Poppins', sans-serif;
+    --primary-color: #0088cc;
+    --secondary-color: #36aeea;
+    /* باقي المتغيرات */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    font-family: var(--font-family); 
+    transition: background-color 0.3s, color 0.3s; 
+    -webkit-font-smoothing: antialiased; 
+}
+
+/* باقي الـ CSS مقسم بشكل منظم */
