@@ -5,41 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Ton App</title>
     
-    <!-- الخطوط والأيقونات -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     
-    <!-- ملفات CSS المحلية -->
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/themes.css">
+    <link rel="me" href="https://www.blogger.com/profile/10625506500157523857" />
+    <meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+    <meta name='google-adsense-platform-domain' content='blogspot.com'/>
 </head>
 <body>
-    <div id="app-loader">
-        <div class="spinner"></div>
-        <p id="loading-progress">0%</p>
-    </div>
+    <div id="app-loader"><div class="spinner"></div><p id="loading-progress">0%</p></div>
+
+    <div id="popup" class="popup-overlay"><div class="popup-content"><div id="popup-body"></div></div></div>
 
     <div class="notification-container" id="notification-container"></div>
-    
-    <div id="popup" class="popup-overlay">
-        <div class="popup-content">
-            <div id="popup-body"></div>
-        </div>
-    </div>
 
     <div id="app" style="display: none;">
         <!-- سيتم تحميل المحتوى ديناميكياً -->
     </div>
 
-    <!-- المكتبات الخارجية -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js"></script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     
-    <!-- ملفات JS المحلية -->
     <script src="js/encryption.js"></script>
     <script src="js/firebase-config.js"></script>
+    <script src="js/notification-manager.js"></script>
     <script src="js/ui-manager.js"></script>
+    <script src="js/task-manager.js"></script>
+    <script src="js/wallet-manager.js"></script>
+    <script src="js/ad-manager.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
