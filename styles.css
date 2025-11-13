@@ -1,8 +1,91 @@
-/* كل كود CSS الذي في التاج style في ملفك الأصلي */
 :root {
     --font-family: 'Poppins', sans-serif;
     --primary-color: #0088cc;
-    /* كل المتغيرات الأخرى */
+    --secondary-color: #36aeea;
+    --background-light: #f5f8fb;
+    --surface-light: #ffffff;
+    --text-primary-light: #1b1f23;
+    --text-secondary-light: #6c757d;
+    --border-light: #dce3ea;
+    --background-dark: #17212b;
+    --surface-dark: #1c2a38;
+    --text-primary-dark: #e9eef3;
+    --text-secondary-dark: #a0b3c1;
+    --border-dark: #2b3a4a;
+    --success: #2ca67a;
+    --danger: #e53935;
+    --pending: #f8c44f;
 }
 
-/* كل الأنماط الأخرى */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-family); transition: background-color 0.3s, color 0.3s; -webkit-font-smoothing: antialiased; }
+body.light-theme { background-color: var(--background-light); color: var(--text-primary-light); }
+body.dark-theme { background-color: var(--background-dark); color: var(--text-primary-dark); }
+#app { max-width: 500px; margin: 0 auto; padding-bottom: 80px; }
+.page { display: none; padding: 15px; }
+.page.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+.profile-header {
+    padding: 25px 15px; border-bottom: 1px solid;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.light-theme .profile-header { background-color: var(--surface-light); border-bottom-color: var(--border-light); }
+.dark-theme .profile-header { background-color: var(--surface-dark); border-bottom-color: var(--border-dark); }
+#user-photo { width: 80px; height: 80px; border-radius: 50%; border: 4px solid var(--primary-color); object-fit: cover; margin-bottom: 10px; }
+#user-name { font-size: 1.4rem; font-weight: 700; margin-bottom: 15px; }
+
+.balance-chips {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.balance-chip {
+    background: rgba(0, 136, 204, 0.1);
+    border: 1px solid rgba(0, 136, 204, 0.2);
+    border-radius: 20px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.light-theme .balance-chip {
+    background: rgba(0, 136, 204, 0.05);
+    border-color: rgba(0, 136, 204, 0.1);
+}
+
+.balance-chip img {
+    width: 20px;
+    height: 20px;
+}
+
+.balance-chip .amount {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+.stat-card { padding: 15px; border-radius: 12px; text-align: center; border: 1px solid; }
+.light-theme .stat-card { background-color: var(--surface-light); border-color: var(--border-light); }
+.dark-theme .stat-card { background-color: var(--surface-dark); border-color: var(--border-dark); }
+.stat-card h3 { font-size: 0.85rem; font-weight: 500; margin-bottom: 8px; text-transform: uppercase; }
+.light-theme .stat-card h3 { color: var(--text-secondary-light); } .dark-theme .stat-card h3 { color: var(--text-secondary-dark); }
+.stat-card p { font-size: 1.4rem; font-weight: 600; color: var(--primary-color); }
+
+.chart-container, .earning-wallet-card { padding: 20px; border-radius: 12px; margin-top: 20px; border: 1px solid; }
+.light-theme .chart-container, .light-theme .earning-wallet-card { background-color: var(--surface-light); border-color: var(--border-light); }
+.dark-theme .chart-container, .dark-theme .earning-wallet-card { background-color: var(--surface-dark); border-color: var(--border-dark); }
+.chart { display: flex; justify-content: space-around; align-items: flex-end; height: 150px; border-left: 1px solid; border-bottom: 1px solid; padding-top: 10px; }
+.light-theme .chart { border-color: var(--border-light); } .dark-theme .chart { border-color: var(--border-dark); }
+.bar { width: 12%; background: linear-gradient(to top, var(--primary-color), var(--secondary-color)); border-radius: 5px 5px 0 0; position: relative; cursor: pointer; }
+.bar .tooltip { position: absolute; top: -30px; left: 50%; transform: translateX(-50%); background: var(--secondary); color: white; padding: 3px 7px; border-radius: 5px; font-size: 0.8rem; white-space: nowrap; opacity: 0; transition: opacity 0.2s; pointer-events: none; }
+.bar:hover .tooltip { opacity: 1; }
+.chart-labels { display: flex; justify-content: space-around; font-size: 0.75rem; margin-top: 5px; }
+
+.history-item { display: flex; justify-content: space-between; align-items: center; padding: 15px; border-radius: 10px; margin-bottom: 10px; }
+.light-theme .history-item { background-color: var(--surface-light); border: 1px solid var(--border-light);
